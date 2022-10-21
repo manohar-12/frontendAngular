@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body data-spy="scroll" target=".navbar">
+    <br>
+    <div class="container">
+        <h2 *ngIf="message" class="alert alert-success">Deleted todo of {{id}} sucessfully</h2>
+    </div>
+    <div class="container">
+        <table border="2px">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>UserName</td>
+                    <td>Description</td>
+                    <td>Date</td>
+                    <td>IsCompleted</td>
+                    <td>Update</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let t of todos">
+                    <td>
+                        {{t.id}}
+                    </td>
+                    <td>
+                        {{t.username}}
+                    </td>
+                    <td>
+                        {{t.description}}
+                    </td>
+                    <td>
+                        {{t.trgetdate | date}}
+                    </td>
+                    <td>
+                        {{t.completed}}
+                    </td>
+                    <td>
+                        <button (click)="update(t.id)" class="btn btn-success">Update</button>
+                    </td>
+                    <td>
+                        <button (click)="delete(t.id)" class="btn btn-warning">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button (click)="Add()" class="btn btn-success">Add</button>
+    </div>
+
+</body>
+
+</html>

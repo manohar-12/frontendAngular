@@ -1,0 +1,11 @@
+table{
+    background-color: black;
+    color: antiquewhite;
+    width: 100%;
+    border-radius: 2%;
+    border: 2px rebeccapurple;
+    text-align: center;
+}
+thead{
+    background-color: green;
+}

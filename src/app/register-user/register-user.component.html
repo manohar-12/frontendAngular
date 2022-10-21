@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br><br><br>
+    <small class="alert alert-warning">Enter details To Register:</small>
+    <br>
+        <form  (ngSubmit)="!LoginForm.invalid && register()" #LoginForm="ngForm" class="form-control">
+            <fieldset class="form-group">
+            <label for="un">UserName:</label>
+            <input type="text" id="un"class="form-control" [(ngModel)]="user" required="true">
+            </fieldset>
+            <fieldset class="form-group">
+            <label for="un">Password:</label>
+            <input type="password" id="ps" class="form-control" [(ngModel)]="password"required="required">
+            </fieldset>
+            <fieldset class="form-group">
+            <label for="un">Confirm Password:</label>
+            <small class="alert alert-warning form-control" *ngIf="state">password dismatch:</small>
+            <input type="password" id="cps"  class="form-control" required="required" [(ngModel)]="cpassword">
+            </fieldset>
+            <button class="btn btn-success form-control" type="submit" >Register</button>
+        </form>
+
+</body>
+</html>

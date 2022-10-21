@@ -1,0 +1,15 @@
+<div class="container">
+    <fieldset class="form-group">
+        <label>Description </label>
+        <input type="text" name="des" id="des" class="form-control" [(ngModel)]="todos.description">
+    </fieldset>
+    <fieldset class="form-group">
+        <label>UserName</label>
+        <input type="text" name="date" id="date" class="form-control" [(ngModel)]="todos.username">
+    </fieldset>
+    <fieldset class="form-group">
+        <label>Status </label>
+        <input type="text" name="date" id="date" class="form-control" [(ngModel)]="todos.completed">
+    </fieldset>
+    <button class="btn btn-success" (click)="Add()">Save</button>
+</div>

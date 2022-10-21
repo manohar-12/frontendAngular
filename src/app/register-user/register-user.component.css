@@ -1,0 +1,13 @@
+.ng-invalid:not(form){
+    border-left: 5px solid red;
+    animation: shake 5px;
+}
+form{
+    border: 2px solid rebeccapurple;
+    width: 50%;
+    margin-left: 25%;
+}
+small{
+    margin-left: 25%;
+    margin-top: 5%;
+}

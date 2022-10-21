@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p *ngIf="todoForm.invalid" class="alert alert-warning">Enter correct values</p>
+        <form (ngSubmit)="!todoForm.invalid && save()" #todoForm="ngForm">
+            <fieldset class="form-group">
+                <label >UserName </label>
+                    <input type="text"  name="name" id="name" class="form-control" [(ngModel)]="todos.username" required="required">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label >Description</label>
+                    <input type="text" name="des" id="des" class="form-control" [(ngModel)]="todos.description" required="required">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label >Status </label>
+                    <input type="text" name="date" id="date" class="form-control" [(ngModel)]="todos.completed" required="required">
+            </fieldset>
+            <button   class="btn btn-success" type="submit">Save</button>
+    </form>
+    </div>
+</body>
+</html>

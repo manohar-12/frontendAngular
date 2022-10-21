@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a class="active" href="/home" *ngIf="!loginser.isuserlogedin()">Login</a>
+        <a routerLink="/home">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <div *ngIf="loginser.isuserlogedin()" class="ser">
+            <input type="search" placeholder="search" class="ser " [(ngModel)]="id"><button
+                class="btn btn-success" (click)="search()">Search</button>
+            
+        </div>
+        <button class="btn1" *ngIf="loginser.isuserlogedin()"
+                (click)="logout()">Logut</button>
+                <button class="btn1" *ngIf="!loginser.isuserlogedin()"
+                (click)="register()">Register</button>
+            
+    </div>
+ 
+    
+    
+    <div id="sect1" class="container">
+        <div [ngStyle]="{'background-image':geturl()}">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <footer>
+        <p>Author:Katta Manohar<br>
+            <a href="mailto:hege@example.com">k.manoharyadav26@gmail.com</a>
+        </p>
+    </footer>
+</body>
+
+</html>

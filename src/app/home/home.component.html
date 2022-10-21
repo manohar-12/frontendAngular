@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <br>
+    <br>
+    <div class="alert alert-warning" *ngIf="LoginForm.invalid"><small>Enter User Name and Password</small></div>
+    <div class="alert alert-warning" *ngIf="state"><small>invalid Credentials</small></div>
+    <form (ngSubmit)="!LoginForm.invalid && Login()" #LoginForm="ngForm">
+        <fieldset class="form-group">
+            <label>UserName :</label>
+            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="UserName" required="required">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label>Password :</label>
+            <input type="text" name="des" id="des" class="form-control" [(ngModel)]="Password" required="required">
+        </fieldset>
+        <button class="btn btn-success" type="submit">Login</button>
+    </form>
+</body>
+
+</html>
